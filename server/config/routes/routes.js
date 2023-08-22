@@ -1,4 +1,4 @@
-const rootcontroller = require("../controller/rootcontroller");
+const rootcontroller = require("../../controller/rootcontroller");
 module.exports = (app) =>{
 
     var router = require("express").Router();

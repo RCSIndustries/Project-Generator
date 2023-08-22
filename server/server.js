@@ -11,7 +11,7 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-require("./routes/routes.js")(app);
+require("./config/routes/routes.js")(app);
 const port = process.env.PORT ||4000;
 app.listen(port, () => {
     console.log('API is Running!');
