@@ -1,0 +1,2 @@
+INSERT INTO projects(project_name, project_desc,project_lang,project_diff)
+values("Racing Game","Build a racing game with tracks, vehicles, and AI opponents for players to compete against.","Unity(C#)","Intermediate")
