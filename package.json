@@ -4,7 +4,14 @@
   "description": "Welcome to the Project Generator repository! This tool allows you to quickly create new project structures and templates, saving you time and effort when starting new projects. Whether you're a developer, designer, or anyone looking to streamline their project setup, this generator has you covered.",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "prod": "next",
+    "start": "react-scripts start ",
+    "build": "react-scripts build",
+    "test": "echo test",
+    "eject": "react-scripts eject",
+    "webserver": "react-scripts build && serve ./build -p 3000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "run-api": "node src/lib/server.js"
   },
   "repository": {
@@ -23,6 +30,23 @@
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^2.1.3"
+    "react-scripts": "^2.1.3",
+    "react-router-dom": "^6.8.1",
+    "serve": "^14.2.1",
+    "redux": "^4.2.1",
+    "web-vitals": "^3.4.0",
+    "axios": "^1.3.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
