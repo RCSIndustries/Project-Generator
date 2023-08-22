@@ -1,4 +1,3 @@
-var pjson = require('../../../package.json');
 
 
 exports.healthCheck = (req, res) => {
@@ -6,7 +5,7 @@ exports.healthCheck = (req, res) => {
 };
 
 exports.versionCheck = (req, res) => {
-    res.send(pjson.version);
+    res.send(process.env.npm_package_version);
 };
 exports.catchAll = (req, res) => {
     res.send("Invalid Get Request");
