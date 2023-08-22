@@ -1,0 +1,26 @@
+{
+  "name": "project-generator",
+  "version": "1.0.0",
+  "description": "Welcome to the Project Generator repository! This tool allows you to quickly create new project structures and templates, saving you time and effort when starting new projects. Whether you're a developer, designer, or anyone looking to streamline their project setup, this generator has you covered.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RCSIndustries/project-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RCSIndustries/project-generator/issues"
+  },
+  "homepage": "https://github.com/RCSIndustries/project-generator#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
