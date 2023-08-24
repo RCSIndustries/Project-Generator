@@ -31,9 +31,20 @@ projectService.findRandom=(req,res)=>{
 }
 
 projectService.findRandomByLang=(lang,res)=>{
-    console.log(lang)
     let query = 'SELECT * FROM projects WHERE project_lang = "'+lang+'" ORDER BY RAND() limit 1';
-    console.log(query);
+    db.query(query,(err,sqlResult)=>{
+        if(err){
+            console.error("Error with SQL Request");
+            res(null,err);
+            return;
+        }
+        console.log("Fetch Random by Language");
+        res(null,sqlResult)
+    });
+}
+
+projectService.findRandomByDiff=(diff,res)=>{
+    let query = 'SELECT * FROM projects WHERE project_diff = "'+diff+'" ORDER BY RAND() limit 1';
     db.query(query,(err,sqlResult)=>{
         if(err){
             console.error("Error with SQL Request");

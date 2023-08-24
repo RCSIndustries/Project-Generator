@@ -39,8 +39,7 @@ exports.fetchByLanguage = (req,res) =>{
 
 exports.fetchByDifficulty = (req,res) =>{
     //Todo: Create this get random by Difficulty
-    const param = null;
-    projectService.findRandom(param, (err, data)=> {
+    projectService.findRandomByDiff(req.params.diff, (err, data)=> {
         if (err)
             res.status(500).send({
                 message:
