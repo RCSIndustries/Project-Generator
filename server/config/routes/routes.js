@@ -8,7 +8,8 @@ module.exports = (app) =>{
     router.get("/", rootcontroller.healthCheck);
     router.get("/version", rootcontroller.versionCheck);
 
-    router.get("/connect",projectcontroller.connect)
+    router.get("/findall",projectcontroller.findAll)
+    router.get("/generate",projectcontroller.fetchRandom)
 
 
     //Placeholder
