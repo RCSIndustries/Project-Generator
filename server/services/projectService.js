@@ -25,7 +25,21 @@ projectService.findRandom=(req,res)=>{
             res(null,err);
             return;
         }
-        console.log("Projects Get All");
+        console.log("Fetch Random");
+        res(null,sqlResult)
+    });
+}
+
+projectService.findRandomByLang=(lang,res)=>{
+    let query = "SELECT * FROM projects WHERE project_lang = ${lang} ORDER BY RAND() limit 1";
+    console.log(lang)
+    db.query(query,(err,sqlResult)=>{
+        if(err){
+            console.error("Error with SQL Request");
+            res(null,err);
+            return;
+        }
+        console.log("Fetch Random by Language");
         res(null,sqlResult)
     });
 }

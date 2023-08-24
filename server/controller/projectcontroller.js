@@ -27,8 +27,10 @@ exports.fetchRandom = (req,res) =>{
 }
 
 exports.fetchByLanguage = (req,res) =>{
+    console.log(req.params.language);
+    console.log(req);
     //Todo: Create this get random by language
-    projectService.findRandom(req.param.language, (err, data)=> {
+    projectService.findRandomByLang(req.param.language, (err, data)=> {
         if (err)
             res.status(500).send({
                 message:

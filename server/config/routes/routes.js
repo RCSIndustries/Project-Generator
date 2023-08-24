@@ -10,7 +10,8 @@ module.exports = (app) =>{
 
     router.get("/findall",projectcontroller.findAll)
     router.get("/generate",projectcontroller.fetchRandom)
-
+    router.get("/generate/lang/:lang",projectcontroller.fetchByLanguage)
+    router.get("/generate/diff/:diff",projectcontroller.fetchByDifficulty)
 
     //Placeholder
     router.get("*", rootcontroller.catchAll);
