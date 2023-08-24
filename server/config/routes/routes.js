@@ -9,10 +9,15 @@ module.exports = (app) =>{
     router.get("/version", rootcontroller.versionCheck);
 
     router.get("/findall",projectcontroller.findAll)
+
     router.get("/generate",projectcontroller.fetchRandom)
     router.get("/generate/lang/:lang",projectcontroller.fetchByLanguage)
     router.get("/generate/diff/:diff",projectcontroller.fetchByDifficulty)
 
+
+    //admin controller
+
+    
     //Placeholder
     router.get("*", rootcontroller.catchAll);
 
