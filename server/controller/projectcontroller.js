@@ -14,6 +14,18 @@ exports.findAll = (req,res) =>{
     });
 }
 
+exports.findById = (req,res) =>{
+    console.log(req.params.id)
+    projectService.findById(req.params.id, (err, data)=> {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving data."
+            });
+        else res.send(data);
+    });
+}
+
 exports.fetchRandom = (req,res) =>{
     const param = null;
     projectService.findRandom(param, (err, data)=> {
@@ -27,10 +39,7 @@ exports.fetchRandom = (req,res) =>{
 }
 
 exports.fetchByLanguage = (req,res) =>{
-    console.log(req.params.language);
-    console.log(req);
-    //Todo: Create this get random by language
-    projectService.findRandomByLang(req.param.language, (err, data)=> {
+    projectService.findRandomByLang(req.params.lang, (err, data)=> {
         if (err)
             res.status(500).send({
                 message:
@@ -42,8 +51,7 @@ exports.fetchByLanguage = (req,res) =>{
 
 exports.fetchByDifficulty = (req,res) =>{
     //Todo: Create this get random by Difficulty
-    const param = null;
-    projectService.findRandom(param, (err, data)=> {
+    projectService.findRandomByDiff(req.params.diff, (err, data)=> {
         if (err)
             res.status(500).send({
                 message:
