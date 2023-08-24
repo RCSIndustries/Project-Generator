@@ -1,5 +1,3 @@
-
-
 exports.healthCheck = (req, res) => {
     res.send("API IS RUNNING!");
 };
