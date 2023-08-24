@@ -31,8 +31,9 @@ projectService.findRandom=(req,res)=>{
 }
 
 projectService.findRandomByLang=(lang,res)=>{
-    let query = "SELECT * FROM projects WHERE project_lang = ${lang} ORDER BY RAND() limit 1";
     console.log(lang)
+    let query = 'SELECT * FROM projects WHERE project_lang = "'+lang+'" ORDER BY RAND() limit 1';
+    console.log(query);
     db.query(query,(err,sqlResult)=>{
         if(err){
             console.error("Error with SQL Request");
