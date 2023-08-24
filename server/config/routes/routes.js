@@ -9,6 +9,8 @@ module.exports = (app) =>{
     router.get("/version", rootcontroller.versionCheck);
 
     router.get("/findall",projectcontroller.findAll)
+    router.get("/findbyid/:id",projectcontroller.findById)
+
 
     router.get("/generate",projectcontroller.fetchRandom)
     router.get("/generate/lang/:lang",projectcontroller.fetchByLanguage)
@@ -17,7 +19,7 @@ module.exports = (app) =>{
 
     //admin controller
 
-    
+
     //Placeholder
     router.get("*", rootcontroller.catchAll);
 

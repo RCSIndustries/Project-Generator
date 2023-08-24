@@ -15,6 +15,18 @@ projectService.findAll=(req,res)=>{
         res(null,sqlResult)
     });
 }
+projectService.findById=(id,res)=>{
+    let query = 'SELECT * FROM projects where project_id='+id;
+    db.query(query,(err,sqlResult)=>{
+        if(err){
+            console.error("Error with SQL Request");
+            res(null,err);
+            return;
+        }
+        console.log("Projects Get All");
+        res(null,sqlResult)
+    });
+}
 
 projectService.findRandom=(req,res)=>{
     let query = "SELECT * FROM projects ORDER BY RAND() limit 1";

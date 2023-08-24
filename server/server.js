@@ -16,8 +16,5 @@ require("./config/routes/routes.js")(app);
 const port = process.env.PORT ||4000;
 
 app.listen(port, () => {
-    const a = "bcd";
-    const dub = 'sasda '+a+' asdasd';
-    console.log(dub);
     console.log('API is Running!');
 });

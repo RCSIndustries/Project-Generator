@@ -14,6 +14,18 @@ exports.findAll = (req,res) =>{
     });
 }
 
+exports.findById = (req,res) =>{
+    console.log(req.params.id)
+    projectService.findById(req.params.id, (err, data)=> {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving data."
+            });
+        else res.send(data);
+    });
+}
+
 exports.fetchRandom = (req,res) =>{
     const param = null;
     projectService.findRandom(param, (err, data)=> {
