@@ -43,7 +43,7 @@ projectService.findRandom=(req,res)=>{
 }
 
 projectService.findRandomByLang=(lang,res)=>{
-    let query = 'SELECT * FROM projects WHERE project_lang = "'+lang+'" ORDER BY RAND() limit 1';
+    let query = 'SELECT * FROM projects WHERE project_lang LIKE "%'+lang+'%" ORDER BY RAND() limit 1';
     db.query(query,(err,sqlResult)=>{
         if(err){
             console.error("Error with SQL Request");
