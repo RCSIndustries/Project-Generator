@@ -1,5 +1,13 @@
 const mysql = require("mysql");
+const dotenv = require('dotenv');
 
+dotenv.config();
+
+const port = process.env.DB_PORT;
+const dbHost = process.env.DB_HOST;
+const dbUser= process.env.DB_USER;
+const dbPassword= process.env.DB_PASSWORD;
+const db = process.env.DB;
 let dbUrl = process.env.DB_URL;
 
 if (process.env.NODE_ENV === 'test') {
@@ -9,10 +17,10 @@ if (process.env.NODE_ENV === 'test') {
 //dburl & port is undefined for some reason
 
 const db_config = {
-    host: '192.168.1.161',
-    user: 'john4064',
-    password: 'X',
-    database: "testdb",
+    host: dbHost,
+    user: dbUser,
+    password: dbPassword,
+    database: db,
     connectionLimit: 100, //important idk why
     debug: false
 };
@@ -24,7 +32,6 @@ let pool;//Changed this from a connection to a pool to account for outages in th
 function handleDisconnect(){
     //connection = mysql.createConnection(db_config);
     pool = mysql.createPool(db_config);
-    console.log("test");
     // open the MySQL connection
     // connection.connect(err => {
     //     if (err){
