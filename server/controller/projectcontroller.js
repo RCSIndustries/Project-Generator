@@ -15,7 +15,6 @@ exports.findAll = (req,res) =>{
 }
 
 exports.findById = (req,res) =>{
-    console.log(req.params.id)
     projectService.findById(req.params.id, (err, data)=> {
         if (err)
             res.status(500).send({
