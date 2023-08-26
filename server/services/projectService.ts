@@ -3,7 +3,7 @@ const db = require("../config/db/connection");
 
 const projectService = function(){
 }
-projectService.findAll=(req,res)=>{
+projectService.findAll=(req:any,res:any)=>{
     let query = "SELECT * FROM projects";
     db.query(query,(err: any,sqlResult: any)=>{
         if(err){
