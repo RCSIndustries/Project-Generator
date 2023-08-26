@@ -2,9 +2,9 @@ const projectService = require("../services/projectService")
 
 
 
-exports.findAll = (req,res) =>{
+exports.findAll = (req:any,res:any) =>{
     const param = null;
-    projectService.findAll(param, (err, data)=> {
+    projectService.findAll(param, (err:any, data:any)=> {
         if (err)
             res.status(500).send({
                 message:
@@ -14,8 +14,8 @@ exports.findAll = (req,res) =>{
     });
 }
 
-exports.findById = (req,res) =>{
-    projectService.findById(req.params.id, (err, data)=> {
+exports.findById = (req:any,res:any) =>{
+    projectService.findById(req.params.id, (err:any, data:any)=> {
         if (err)
             res.status(500).send({
                 message:
@@ -25,9 +25,9 @@ exports.findById = (req,res) =>{
     });
 }
 
-exports.fetchRandom = (req,res) =>{
+exports.fetchRandom = (req:any,res:any) =>{
     const param = null;
-    projectService.findRandom(param, (err, data)=> {
+    projectService.findRandom(param, (err:any, data:any)=> {
         if (err)
             res.status(500).send({
                 message:
@@ -37,8 +37,8 @@ exports.fetchRandom = (req,res) =>{
     });
 }
 
-exports.fetchByLanguage = (req,res) =>{
-    projectService.findRandomByLang(req.params.lang, (err, data)=> {
+exports.fetchByLanguage = (req:any,res:any) =>{
+    projectService.findRandomByLang(req.params.lang, (err:any, data:any)=> {
         if (err)
             res.status(500).send({
                 message:
@@ -48,9 +48,9 @@ exports.fetchByLanguage = (req,res) =>{
     });
 }
 
-exports.fetchByDifficulty = (req,res) =>{
+exports.fetchByDifficulty = (req:any,res:any) =>{
     //Todo: Create this get random by Difficulty
-    projectService.findRandomByDiff(req.params.diff, (err, data)=> {
+    projectService.findRandomByDiff(req.params.diff, (err:any, data:any)=> {
         if (err)
             res.status(500).send({
                 message:

@@ -7,7 +7,7 @@ const port = process.env.DB_PORT;
 const dbHost = process.env.DB_HOST;
 const dbUser= process.env.DB_USER;
 const dbPassword= process.env.DB_PASSWORD;
-const db = process.env.DB;
+const dbTable = process.env.DB;
 let dbUrl = process.env.DB_URL;
 
 if (process.env.NODE_ENV === 'test') {
@@ -20,7 +20,7 @@ const db_config = {
     host: dbHost,
     user: dbUser,
     password: dbPassword,
-    database: db,
+    database: dbTable,
     connectionLimit: 100, //important idk why
     debug: false
 };

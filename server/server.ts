@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const app = express();
 const publicPath = path.join( "./",'public');
-const mysql = require("mysql");
 
 
 app.use(express.static(publicPath));
@@ -13,10 +12,10 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-require("./config/routes/routes.js")(app);
+require("./config/routes/routes.ts")(app);
 
 
-const port =4000;
-app.listen(port, () => {
+const serverPort =4000;
+app.listen(serverPort, () => {
     console.log('API is Running!');
 });
