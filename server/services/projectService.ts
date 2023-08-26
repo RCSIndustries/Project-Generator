@@ -1,11 +1,11 @@
+
 const db = require("../config/db/connection");
 
 const projectService = function(){
-    this.x=1;
 }
 projectService.findAll=(req,res)=>{
     let query = "SELECT * FROM projects";
-    db.query(query,(err,sqlResult)=>{
+    db.query(query,(err: any,sqlResult: any)=>{
         if(err){
             console.error("Error with SQL Request");
             res(null,err);
@@ -15,9 +15,9 @@ projectService.findAll=(req,res)=>{
         res(null,sqlResult)
     });
 }
-projectService.findById=(id,res)=>{
+projectService.findById=(id :number,res:any)=>{
     let query = 'SELECT * FROM projects where project_id='+id;
-    db.query(query,(err,sqlResult)=>{
+    db.query(query,(err:any,sqlResult:any)=>{
         if(err){
             console.error("Error with SQL Request");
             res(null,err);
@@ -28,10 +28,10 @@ projectService.findById=(id,res)=>{
     });
 }
 
-projectService.findRandom=(req,res)=>{
+projectService.findRandom=(req:any,res:any)=>{
     let query = "SELECT * FROM projects ORDER BY RAND() limit 1";
     
-    db.query(query,(err,sqlResult)=>{
+    db.query(query,(err:any,sqlResult:any)=>{
         if(err){
             console.error("Error with SQL Request");
             res(null,err);
@@ -42,9 +42,9 @@ projectService.findRandom=(req,res)=>{
     });
 }
 
-projectService.findRandomByLang=(lang,res)=>{
+projectService.findRandomByLang=(lang:string,res:any)=>{
     let query = 'SELECT * FROM projects WHERE project_lang LIKE "%'+lang+'%" ORDER BY RAND() limit 1';
-    db.query(query,(err,sqlResult)=>{
+    db.query(query,(err:any,sqlResult:any)=>{
         if(err){
             console.error("Error with SQL Request");
             res(null,err);
@@ -55,9 +55,9 @@ projectService.findRandomByLang=(lang,res)=>{
     });
 }
 
-projectService.findRandomByDiff=(diff,res)=>{
+projectService.findRandomByDiff=(diff:string,res:any)=>{
     let query = 'SELECT * FROM projects WHERE project_diff = "'+diff+'" ORDER BY RAND() limit 1';
-    db.query(query,(err,sqlResult)=>{
+    db.query(query,(err:any,sqlResult:any)=>{
         if(err){
             console.error("Error with SQL Request");
             res(null,err);
