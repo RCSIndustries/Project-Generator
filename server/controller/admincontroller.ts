@@ -1,19 +1,18 @@
 //This controller will be responsible for admin endpoints such as adding ideas, editing ideas, removing ideas, accessing log data
-const adminService = require("../services/adminService");
+const adminService = require("../services/admin.service");
 
 
 exports.delete = (req:any, res:any) => {
-    Whitelist.remove(req.params.steamid, (err:any, data):any => {
+    //Todo: Fix error handling.
+    adminService.removeById(req.params.id, (err:any, data:any):any => {
         if (err) {
-            if (err.kind === "not_found") {
-                res.status(404).send({
-                    message: `Not found Whitelist with id ${req.params.steamid}.`
-                });
-            } else {
-                res.status(500).send({
-                    message: "Could not delete Whitelist with id " + req.params.steamid
-                });
-            }
-        } else res.send({ message: `Whitelist was deleted successfully!` });
+            //Todo: Add if to check err.kind
+            res.status(404).send({
+                message: `ERROR ATM`
+            });
+            
+        } else{
+            res.send({ message: `Idea was deleted successfully!` });
+        }
     });
 };

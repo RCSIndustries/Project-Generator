@@ -63,7 +63,7 @@ projectService.findRandomByDiff=(diff:string,res:any)=>{
             res(null,err);
             return;
         }
-        console.log("Fetch Random by Language");
+        console.log("Fetch Random by Diff");
         res(null,sqlResult)
     });
 }
