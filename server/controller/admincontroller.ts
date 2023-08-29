@@ -10,9 +10,12 @@ exports.delete = (req:any, res:any) => {
             res.status(404).send({
                 message: `ERROR ATM`
             });
-            
-        } else{
-            res.send({ message: `Idea was deleted successfully!` });
+        }else if(err== null && data ==null){
+            res.status(400).send({
+                message: 'Project not found at:'+req.params.id
+            });
+        }else{
+            res.send({ message: 'Project idea '+req.params.id+' was deleted successfully!' });
         }
     });
 };

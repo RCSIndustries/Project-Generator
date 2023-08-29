@@ -12,8 +12,8 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
+require("./config/routes/adminroutes")(app);
 require("./config/routes/routes.ts")(app);
-
 
 const serverPort =4000;
 app.listen(serverPort, () => {

@@ -11,7 +11,13 @@ AdminService.removeById=(id:any, res:any)=>{
             res(null,err);
             return;
         }
-        res(null,sqlResult)
+        if(sqlResult.affectedRows==0){
+            console.log("Not Found");
+            res(null,null);
+        }else{
+            console.log(sqlResult);
+            res(null,sqlResult)
+        }
     });
 }
 module.exports = AdminService;
