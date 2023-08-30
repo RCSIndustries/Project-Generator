@@ -24,6 +24,16 @@ exports.findById = async(req:any,res:any) =>{
         else res.send(data);
     });
 }
+exports.findByName= async(req:any,res:any)=>{
+    projectService.findByName(req.params.name, (err:any, data:any)=> {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving data."
+            });
+        else res.send(data);
+    });
+}
 
 exports.fetchRandom = async(req:any,res:any) =>{
     const param = null;
@@ -49,7 +59,6 @@ exports.fetchByLanguage = async(req:any,res:any) =>{
 }
 
 exports.fetchByDifficulty = async(req:any,res:any) =>{
-    //Todo: Create this get random by Difficulty
     projectService.findRandomByDiff(req.params.diff, (err:any, data:any)=> {
         if (err)
             res.status(500).send({

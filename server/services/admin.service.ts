@@ -1,3 +1,4 @@
+
 const adminDb = require("../config/db/connection");
 
 const AdminService = function(){
@@ -15,9 +16,23 @@ AdminService.removeById=(id:any, res:any)=>{
             console.log("Not Found");
             res(null,null);
         }else{
-            console.log(sqlResult);
             res(null,sqlResult)
         }
     });
+}
+
+AdminService.create=(newProject:any, res:any)=>{
+
+    let query = `INSERT INTO projects(project_name, project_desc,project_lang,project_diff) values("${newProject.project_name}","${newProject.project_desc}","${newProject.project_lang}","${newProject.project_diff}");`;
+    console.log(query)
+    adminDb.query(query,(err:any,sqlResult:any)=>{
+        if(err){
+            console.error("Error with SQL Request");
+            res(null,err);
+            return;
+        }
+        res(null,sqlResult);
+    })
+
 }
 module.exports = AdminService;

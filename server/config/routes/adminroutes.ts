@@ -4,7 +4,10 @@ module.exports = (app:any) =>{
     var router = require("express").Router();
 
     //admin controller
-    router.get("/delete/:id",admincontroller.delete)
+    router.delete("/delete/:id",admincontroller.delete)
+
+    router.post("/create/",admincontroller.create)
+
     app.use('/admin', router);
 
 }

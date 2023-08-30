@@ -9,7 +9,7 @@ module.exports = (app:any) =>{
 
     router.get("/findall",projectcontroller.findAll)
     router.get("/findbyid/:id",projectcontroller.findById)
-
+    router.get("/findbyname/:name",projectcontroller.findByName)
 
     router.get("/generate",projectcontroller.fetchRandom)
     router.get("/generate/lang/:lang",projectcontroller.fetchByLanguage)
