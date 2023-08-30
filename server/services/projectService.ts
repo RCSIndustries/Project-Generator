@@ -23,7 +23,20 @@ projectService.findById=(id :number,res:any)=>{
             res(null,err);
             return;
         }
-        console.log("Projects Get All");
+        console.log("Projects Find By Id: "+id);
+        res(null,sqlResult)
+    });
+}
+
+projectService.findByName=(name :string,res:any)=>{
+    let query = 'SELECT * FROM projects where project_name='+name;
+    db.query(query,(err:any,sqlResult:any)=>{
+        if(err){
+            console.error("Error with SQL Request");
+            res(null,err);
+            return;
+        }
+        console.log("Projects find by name: "+name);
         res(null,sqlResult)
     });
 }
@@ -63,7 +76,7 @@ projectService.findRandomByDiff=(diff:string,res:any)=>{
             res(null,err);
             return;
         }
-        console.log("Fetch Random by Language");
+        console.log("Fetch Random by Diff");
         res(null,sqlResult)
     });
 }
