@@ -34,7 +34,21 @@ exports.create = async(req:any,res:any) => {
                 message: err.message || "Some error occurred while creating the project idea."});
         else res.status(200).send(data);
     });
-     //Get the id of the new project
-    //  res.status(200).send({ message: "Created!" });
+}
+
+exports.update= async(req:any,res:any)=>{
+    adminService.update(req.params.id,"REPLACE", (err:any, data:any) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Didnt find project ID ${req.params.id}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving project with id " + req.params.id
+                });
+            }
+        } else res.send(data);
+    });
 
 }
