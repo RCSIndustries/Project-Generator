@@ -50,4 +50,5 @@ exports.update= async(req:any,res:any)=>{
             }
         } else res.send(data);
     });
+
 }
