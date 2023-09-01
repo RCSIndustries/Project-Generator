@@ -8,7 +8,11 @@ module.exports = (app:any) =>{
 
     router.post("/create/",admincontroller.create);
 
-    router.put("/update/:id",admincontroller.update);
+    router.put("/updatename/:id",admincontroller.updateName);
+    router.put("/updatedesc/:id",admincontroller.updateDesc);
+    router.put("/updatelang/:id",admincontroller.updateLang);
+    router.put("/updatediff/:id",admincontroller.updateDiff);
+
 
     app.use('/admin', router);
 
