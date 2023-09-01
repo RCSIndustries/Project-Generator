@@ -51,4 +51,21 @@ AdminService.updateName=(id:number,body:any,res:any)=>{
         res(null,sqlResult.insertId)
     });
 }
+
+AdminService.updateDesc=(id:number,body:any,res:any)=>{
+    adminDb.query("UPDATE projects SET project_desc = ? WHERE project_id = ?",[body.project_desc,id],(err:any,sqlResult:any)=>{
+        if(err){
+            console.log("Error: ",err);
+            res(err,null);
+            return;
+        }
+        if (sqlResult.affectedRows === 0) {
+            // not found Tutorial with the id
+            res({ kind: "not_found" }, null);
+            return;
+        }
+        console.log("Updated Project DB: ", { id: sqlResult.insertId});
+        res(null,sqlResult.insertId)
+    });
+}
 module.exports = AdminService;

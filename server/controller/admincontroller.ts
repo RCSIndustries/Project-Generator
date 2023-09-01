@@ -36,7 +36,7 @@ exports.create = async(req:any,res:any) => {
     });
 }
 
-exports.update= async(req:any,res:any)=>{
+exports.updateName= async(req:any,res:any)=>{
     adminService.updateName(req.params.id,req.body, (err:any, data:any) => {
         if (err) {
             if (err.kind === "not_found") {
@@ -52,5 +52,22 @@ exports.update= async(req:any,res:any)=>{
             res.status(200).send({message:"Successful Update of project: "+req.params.id});
         } 
     });
+}
 
+exports.updateDesc= async(req:any,res:any)=>{
+    adminService.updateDesc(req.params.id,req.body, (err:any, data:any) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Didnt find project ID ${req.params.id}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving project with id " + req.params.id
+                });
+            }
+        } else{
+            res.status(200).send({message:"Successful Update of project: "+req.params.id});
+        } 
+    });
 }
