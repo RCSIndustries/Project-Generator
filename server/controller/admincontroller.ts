@@ -71,3 +71,21 @@ exports.updateDesc= async(req:any,res:any)=>{
         } 
     });
 }
+
+exports.updateLang= async(req:any,res:any)=>{
+    adminService.updateLang(req.params.id,req.body, (err:any, data:any) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Didnt find project ID ${req.params.id}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving project with id " + req.params.id
+                });
+            }
+        } else{
+            res.status(200).send({message:"Successful Update of project: "+req.params.id});
+        } 
+    });
+}

@@ -10,6 +10,7 @@ module.exports = (app:any) =>{
 
     router.put("/updatename/:id",admincontroller.updateName);
     router.put("/updatedesc/:id",admincontroller.updateDesc);
+    router.put("/updatelang/:id",admincontroller.updateLang);
 
 
     app.use('/admin', router);
