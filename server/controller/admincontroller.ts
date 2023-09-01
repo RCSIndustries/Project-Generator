@@ -37,7 +37,7 @@ exports.create = async(req:any,res:any) => {
 }
 
 exports.update= async(req:any,res:any)=>{
-    adminService.update(req.params.id,"REPLACE", (err:any, data:any) => {
+    adminService.updateName(req.params.id,req.body, (err:any, data:any) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({
@@ -48,7 +48,9 @@ exports.update= async(req:any,res:any)=>{
                     message: "Error retrieving project with id " + req.params.id
                 });
             }
-        } else res.send(data);
+        } else{
+            res.status(200).send({message:"Successful Update of project: "+req.params.id});
+        } 
     });
 
 }

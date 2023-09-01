@@ -35,8 +35,8 @@ AdminService.create=(newProject:any, res:any)=>{
     })
 }
 
-AdminService.update=(id:number,name:string,res:any)=>{
-    adminDb.query("UPDATE projects SET project_name = ? WHERE identifier = ?",[name,id],(err:any,sqlResult:any)=>{
+AdminService.updateName=(id:number,body:any,res:any)=>{
+    adminDb.query("UPDATE projects SET project_name = ? WHERE project_id = ?",[body.name,id],(err:any,sqlResult:any)=>{
         if(err){
             console.log("Error: ",err);
             res(err,null);
@@ -50,7 +50,5 @@ AdminService.update=(id:number,name:string,res:any)=>{
         console.log("Updated Project DB: ", { id: sqlResult.insertId});
         res(null,sqlResult.insertId)
     });
-}
-
 }
 module.exports = AdminService;
