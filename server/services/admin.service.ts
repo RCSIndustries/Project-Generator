@@ -85,4 +85,21 @@ AdminService.updateLang=(id:number,body:any,res:any)=>{
         res(null,sqlResult.insertId)
     });
 }
+
+AdminService.updateDiff=(id:number,body:any,res:any)=>{
+    adminDb.query("UPDATE projects SET project_diff = ? WHERE project_id = ?",[body.project_diff,id],(err:any,sqlResult:any)=>{
+        if(err){
+            console.log("Error: ",err);
+            res(err,null);
+            return;
+        }
+        if (sqlResult.affectedRows === 0) {
+            // not found Tutorial with the id
+            res({ kind: "not_found" }, null);
+            return;
+        }
+        console.log("Updated Project DB: ", { id: sqlResult.insertId});
+        res(null,sqlResult.insertId)
+    });
+}
 module.exports = AdminService;
