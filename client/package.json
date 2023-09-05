@@ -22,14 +22,15 @@
     "@mui/material": "^5.14.6",
     "express": "^4.18.2",
     "next": "^13.4.19",
+    "nth-check": "^2.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
     "serve": "^14.2.1",
-    "web-vitals": "^3.4.0",
-    "nth-check": "^2.0.1"
+    "styled-components": "^6.0.7",
+    "web-vitals": "^3.4.0"
   },
   "bundleDependencies": [
     "next"
