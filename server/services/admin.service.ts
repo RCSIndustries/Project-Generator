@@ -36,7 +36,7 @@ AdminService.create=(newProject:any, res:any)=>{
 }
 
 AdminService.updateName=(id:number,body:any,res:any)=>{
-    adminDb.query("UPDATE projects SET project_name = ? WHERE project_id = ?",[body.name,id],(err:any,sqlResult:any)=>{
+    adminDb.query("UPDATE projects SET project_name = ? WHERE project_id = ?",[body.project_name,id],(err:any,sqlResult:any)=>{
         if(err){
             console.log("Error: ",err);
             res(err,null);
