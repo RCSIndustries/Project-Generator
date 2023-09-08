@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
-import { GeneratorWrapper,GenerateButton } from './Generator.styled';
-
+import './Generator.css'; 
 interface GeneratorProps {}
 
+function generateIdea(){
+   console.log("Generate");
+}
+
 const Generator: FC<GeneratorProps> = () => (
- <GeneratorWrapper>
-   
-        <input type="text" placeholder="Enter text"/>
-        <br></br>
-        <GenerateButton>
-          Generate
-        </GenerateButton>
- </GeneratorWrapper>
+<div className='Generator-Page'>
+   <button id="generate-btn" onClick={generateIdea}>Generate</button>
+
+
+</div>
 );
 
 export default Generator;
