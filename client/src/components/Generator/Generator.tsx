@@ -12,9 +12,9 @@ function generateIdea(){
 }
 
 
-const Generator: FC<GeneratorProps> = () => (
+const Generator: FC<GeneratorProps> = (data:GeneratorProps) => (
 <div className='Generator-Page'>
-   <h2></h2>
+   <h2>{data.projectName}</h2>
    <button id="generate-btn" onClick={generateIdea}>Generate</button>
 </div>
 );

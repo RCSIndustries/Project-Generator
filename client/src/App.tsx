@@ -3,7 +3,7 @@ import { ResponsiveNavBar } from './web/common/ResponseiveNavBar';
 import Generator from './components/Generator/Generator';
 import { GeneratorProps } from './components/Generator/Generator';
 const initProps:GeneratorProps ={
-  "projectName":"abc",
+  "projectName":"DEF",
   "projectDesc":"",
   "projectDiff":"",
   "projectLang":""
