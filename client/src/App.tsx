@@ -13,7 +13,7 @@ function ProjectGenerator() {
     <div className="ProjectGenerator">
       <ResponsiveNavBar />
       <Routes>
-        { <Route path='/' element={<Generator {...blah}/>} />
+        { <Route path='/' element={<Generator {...initProps}/>} />
         /*<Route path='/generator' element={<Generator />} />
         <Route path='/aboutus' element={<About />} /> */}
       </Routes>
