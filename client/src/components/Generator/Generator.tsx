@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './Generator.css'; 
-interface GeneratorProps {
+export interface GeneratorProps {
    projectName:String;
    projectDesc:String;
    projectDiff:String;
@@ -10,14 +10,9 @@ interface GeneratorProps {
 function generateIdea(){
    console.log("Generate");
 }
-var temp:GeneratorProps={
-   projectName:"",
-   projectDesc:"",
-   projectDiff:"",
-   projectLang:""
-}
 
-const Generator: FC<GeneratorProps> = (temp) => (
+
+const Generator: FC<GeneratorProps> = () => (
 <div className='Generator-Page'>
    <h2></h2>
    <button id="generate-btn" onClick={generateIdea}>Generate</button>
