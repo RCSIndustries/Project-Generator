@@ -10,8 +10,14 @@ interface GeneratorProps {
 function generateIdea(){
    console.log("Generate");
 }
+var temp:GeneratorProps={
+   projectName:"",
+   projectDesc:"",
+   projectDiff:"",
+   projectLang:""
+}
 
-const Generator: FC<GeneratorProps> = (projectName:"",projectDesc:"",projectDiff:"",projectLang:"") => (
+const Generator: FC<GeneratorProps> = (temp) => (
 <div className='Generator-Page'>
    <h2></h2>
    <button id="generate-btn" onClick={generateIdea}>Generate</button>
