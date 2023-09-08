@@ -2,11 +2,11 @@ import { Route, Routes } from 'react-router';
 import { ResponsiveNavBar } from './web/common/ResponseiveNavBar';
 import Generator from './components/Generator/Generator';
 import { GeneratorProps } from './components/Generator/Generator';
-const blah:GeneratorProps ={
+const initProps:GeneratorProps ={
   "projectName":"abc",
   "projectDesc":"",
   "projectDiff":"",
-  "projectLang":"String"
+  "projectLang":""
 };
 function ProjectGenerator() {
   return (
