@@ -5,11 +5,12 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const app = express();
 const publicPath = path.join( "./",'public');
-
+const cors = require('cors');
 
 app.use(express.static(publicPath));
 app.use(helmet());
 app.use(morgan('dev'));
+app.use(cors());
 app.use(bodyParser.json());
 
 require("./config/routes/adminroutes")(app);
