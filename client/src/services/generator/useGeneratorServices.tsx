@@ -1,5 +1,4 @@
-import axios, * as others from 'axios';
-import { GeneratorProps } from '../../structs/generatorinterface';
+import axios from 'axios';
 const axiosInstance = axios.create({
     baseURL: 'http://localhost:4000', // Your API base URL
     headers: {
@@ -8,28 +7,29 @@ const axiosInstance = axios.create({
     },
   });
 
-export const generateIdea=()=>{
-    var data: GeneratorProps;
+export const useGeneratorServices = async () => {
+    let data: object;
 
-    axiosInstance.get('/api/generate/')
+    await axiosInstance.get('/api/generate/')
     
-  .then(function (response:any) {
+  .then((response) => {
     // handle success
-    // console.log(response.data);
-    data=response.data[0];    
+    console.log(response.data);
+    data = response.data[0];
   })
-  .catch(function (error: any) {
+  .catch((error) => {
     // handle error
     console.log(error);
-    data={
+    data = {
         "project_name":"",
         "project_desc":"",
         "project_diff":"",
         "project_lang":""
     };
   })
-  .finally(function () {
+  .finally(() => {
     // always executed
+    console.log('Returned Data: ', data);
     return data;
   });  
  }

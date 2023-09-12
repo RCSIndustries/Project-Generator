@@ -1,19 +1,26 @@
-import React, { FC } from 'react';
-import './Generator.css'; 
-import { generateIdea } from '../../../services/generator/generatorservices';
-import { GeneratorProps } from '../../../structs/generatorinterface';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { useGeneratorServices } from '../../../services/generator/useGeneratorServices';
 
+export const Generator = ({data, setData}) => {
+   
+  const updateData = () => {
+   setData(useGeneratorServices);
+ };
 
+ useEffect(() => {
+   console.log('Data: ', data);
+ }, [data])
 
-
-const Generator: FC<GeneratorProps> = (data:any, setData:any) => {
-
-return(
-<div className='Generator-Page'>
-   <h2>{data.project_name}</h2>
-   <button id="generate-btn" onClick={generateIdea}>Generate</button>
-</div>
-);
+   return(
+      <React.Fragment>
+         <h2>{data.project_name}</h2>
+         <button id="generate-btn" onClick={updateData}>Generate</button>
+      </React.Fragment>
+   );
 };
 
-export default Generator;
+Generator.propTypes = {
+   data: PropTypes.shape({}).isRequired,
+   setData: PropTypes.func.isRequired
+};
