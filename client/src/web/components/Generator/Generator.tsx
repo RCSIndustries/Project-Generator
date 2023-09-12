@@ -4,8 +4,8 @@ import { useGeneratorServices } from '../../../services/generator/useGeneratorSe
 
 export const Generator = ({data, setData}) => {
    
-  const updateData = () => {
-   setData(useGeneratorServices);
+  const updateData = async () => {
+   useGeneratorServices(setData);
  };
 
  useEffect(() => {
