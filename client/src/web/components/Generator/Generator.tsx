@@ -13,8 +13,8 @@ const Wrapper = styled.main`
 const GenBox = styled.div`
 	min-width: 40%;
 	max-width:40%;
-	min-height: 40%;
-	max-width: 40%;
+	min-height: 50%;
+	max-height: 50%;
 	background-color: #27213c; /* Background color for the page */
 	border-radius: 10px; /* Adjust the value to control the amount of rounding */
 	border: 2px solid #007bff;
