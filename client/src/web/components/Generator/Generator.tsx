@@ -23,6 +23,7 @@ const GenBox = styled.div`
 	align-items:center;
 	position: relative;
 	color:#fff;
+	padding: 20px;
 `;
 import GenerateButtonComponent from "../../common/GenerateBtn/Generatebtn";
 import { Box } from "@mui/material";

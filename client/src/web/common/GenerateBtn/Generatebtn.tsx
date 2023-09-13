@@ -11,7 +11,8 @@ const GenerateButton = styled.button`
   cursor: pointer; /* Add a pointer cursor on hover */
   transition: background-color 0.3s ease; /* Smooth transition for background color */
   position: absolute;
-  bottom: 0;
+
+  bottom: 5%;
   /* Add hover styles */
   &:hover {
     background-color: #45a049; /* Darker green on hover */
