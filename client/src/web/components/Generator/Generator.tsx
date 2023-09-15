@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useGeneratorServices } from "../../../services/generator/useGeneratorServices";
 import { styled } from "styled-components";
 import GenerateButtonComponent from "../../common/GenerateBtn/Generatebtn";
-import { Box } from "@mui/material";
+import { levelColors } from "../maps/maps";
 
 const Wrapper = styled.main({
 	display: 'flex',
@@ -60,14 +60,9 @@ export const Generator = ({ data, setData }) => {
     //Execute this everytime the data changes
     setLevelColor('#007bff');
     if (data?.project_diff) {
-      if (data.project_diff === 'Advanced') {
-        setLevelColor('#FF0000')
-      } else if (data.project_diff === 'Intermediate') {
-        setLevelColor('#FFFF00')
-      } else if (data.project_diff === 'Beginner') {
-        setLevelColor('#008000')
-      } else if (data.project_diff.includes('Varies')) {
-        setLevelColor('#FF8095')
+      const level = Object.keys(levelColors).find(key => data.project_diff.includes(key));
+      if (level) {
+        setLevelColor(levelColors[level]);
       }
     }
   }, [data]);
