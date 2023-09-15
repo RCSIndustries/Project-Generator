@@ -11,9 +11,9 @@ function ProjectGenerator() {
     <React.Fragment>
       <ResponsiveNavBar />
       <Routes>
-        <Route path='/' element={<Generator data={data} setData={setData}/>} />
-        {/*<Route path='/generator' element={<Generator />} />
-        <Route path='/aboutus' element={<About />} /> */}
+        <Route path='/' element={<Generator data={data} setData={setData} />} />
+        <Route path='/generator' element={<Generator data={data} setData={setData} />} />
+        {/* <Route path='/aboutus' element={<About />} /> */}
       </Routes>
     </React.Fragment>
   );
