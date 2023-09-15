@@ -21,6 +21,7 @@ const GenerateButton = styled.button({
   }
 });
 
+
 function GenerateButtonComponent({ onClick }) {
   return (
     <GenerateButton onClick={onClick}>
