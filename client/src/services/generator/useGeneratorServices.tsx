@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = 'http://100.35.17.167:4000';
 
 export const useGeneratorServices = async (setData) => {
   await axios(`${BASE_URL}/api/generate/`, {
