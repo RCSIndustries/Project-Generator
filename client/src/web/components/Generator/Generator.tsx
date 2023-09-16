@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useGeneratorServices } from "../../../services/generator/useGeneratorServices";
 import { styled } from "styled-components";
 import GenerateButtonComponent from "../../common/GenerateBtn/Generatebtn";
-import { Box } from "@mui/material";
+import { levelColors } from "../maps/maps";
 
 const Wrapper = styled.main({
 	display: 'flex',
@@ -21,7 +21,6 @@ const GenBox = styled.div({
 	maxHeight: '50%',
 	backgroundColor: '#27213c', /* Background color for the page */
 	borderRadius: '10px', /* Adjust the value to control the amount of rounding */
-	border: '2px solid #007bff',
 	display: 'flex',
 	flexDirection: 'column',
 	alignItems: 'center',
@@ -50,18 +49,28 @@ const StyledText = styled.p({
 })
 
 export const Generator = ({ data, setData }) => {
+
+  const [levelColor, setLevelColor] = useState('#007bff')
+
   const updateData = () => {
     useGeneratorServices(setData);
   };
 
   useEffect(() => {
     //Execute this everytime the data changes
+    setLevelColor('#007bff');
+    if (data?.project_diff) {
+      const level = Object.keys(levelColors).find(key => data.project_diff.includes(key));
+      if (level) {
+        setLevelColor(levelColors[level]);
+      }
+    }
   }, [data]);
 
   return (
     <React.Fragment>
       <Wrapper>
-        <GenBox>
+        <GenBox style={{ border: `2px solid ${levelColor}` }}>
           <DataBox>
             <StyledHeader>{data.project_name}</StyledHeader>
             <StyledText>{data.project_desc}</StyledText>
