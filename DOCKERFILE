@@ -1,12 +1,43 @@
-FROM node:16
-WORKDIR /usr/src/app
+FROM node:16-alpine
+
+WORKDIR /app
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
 COPY package*.json ./
+COPY package-lock.json ./
+COPY client ./client
+COPY server ./server
+
 
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --omit=dev
 COPY . .
+EXPOSE 3000
+CMD ["npm","start"]
 
-EXPOSE 8080
 
-CMD["npm","start"]
+
+
+#NOT WORKING
+
+# RUN mkdir /app
+# COPY package*.json ./app
+# copy ./ ./app
+# copy ./server ./app/server
+# copy ./client ./app/client
+
+# WORKDIR ./app
+
+
+# RUN npm install
+# # If you are building your code for production
+# # RUN npm ci --omit=dev
+# COPY . .
+
+# EXPOSE 8080
+# EXPOSE 3000
+# EXPOSE 4000
+
+# CMD [ "npm", "start"]
