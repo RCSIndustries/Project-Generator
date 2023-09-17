@@ -16,5 +16,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.1"
+  },
+  "dependencies": {
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1"
   }
 }

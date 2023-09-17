@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  front-end:
+    build: ./client
+    ports:
+      - "3000:3000"
+  back-end:
+    build: ./server
+    ports:
+      - "4000:4000"
