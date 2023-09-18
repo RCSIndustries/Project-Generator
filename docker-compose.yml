@@ -6,10 +6,13 @@ services:
         client
       dockerfile:
         Dockerfile.prod
-
     ports:
       - "3000:3000"
-  # back-end:
-  #   build: ./server
-  #   ports:
-  #     - "4000:4000"
+  back-end:
+    build:
+      context:
+        server
+      dockerfile:
+        Dockerfile
+    ports:
+      - "4000:4000"
