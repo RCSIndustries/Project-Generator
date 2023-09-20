@@ -1,13 +1,13 @@
 version: '3.3'
 services:
-  front-end:
-    build:
-      context:
-        client
-      dockerfile:
-        Dockerfile.prod
-    ports:
-      - "3000:3000"
+  # front-end:
+  #   build:
+  #     context:
+  #       client
+  #     dockerfile:
+  #       Dockerfile.prod
+  #   ports:
+  #     - "80:80"
   back-end:
     build:
       context:

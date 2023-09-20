@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "test": "echo test",
     "eject": "react-scripts eject",
-    "webserver": "react-scripts build && serve ./build -p 3000",
+    "webserver": "react-scripts build && serve ./build -p 80",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
