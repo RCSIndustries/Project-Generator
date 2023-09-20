@@ -3,6 +3,5 @@ FROM node:16-alpine
 WORKDIR /app
 COPY /build ./build
 
-EXPOSE 8080
-EXPOSE 3000
-CMD ["npx","serve","-s","build"]
+EXPOSE 80
+CMD ["npx","serve","-s","build","-p","80"]
