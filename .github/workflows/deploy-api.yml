@@ -25,6 +25,6 @@ jobs:
       run: |
         docker build -f server/Dockerfile -t john4064/project-gen:backend ./server
     - 
-      name: docker push
+      name: Docker Push Backend
       run: |
         docker push john4064/project-gen:backend
