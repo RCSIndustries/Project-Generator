@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    environment: Prod
+    environment: prod
     runs-on: ubuntu-latest
     steps:
     - 
