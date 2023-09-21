@@ -12,7 +12,8 @@ const dbTable = process.env.DB;
 let dbUrl = process.env.DB_URL;
 
 if (process.env.NODE_ENV === 'test') {
-    dbUrl = process.env.TEST_DB_URL;
+    //SET TEST DB
+    dbUrl = process.env.TEST_DB_URL; 
 }
 
 //dburl & port is undefined for some reason
