@@ -13,4 +13,4 @@ jobs:
     - name: Build the Docker Image
       run: docker build -f Dockerfile -t john4064/project-gen:backend
     - name: Run the Docker Image
-      run: docker run -p 4000:4000  -d john4064/code-catalyst-server
+      run: docker run -p 4000:4000 -d john4064/code-catalyst-server
