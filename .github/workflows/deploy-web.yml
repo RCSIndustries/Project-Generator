@@ -1,0 +1,16 @@
+name: Deploy Web
+
+on:
+  push:
+    branches: [main]
+    paths: [client/**]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker Image
+      run: docker build -f Dockerfile.prod -t john4064/project-gen:frontend
+    - name: Run the Docker Image
+      run: docker run -p 80:80 -d john4064/project-gen:frontend
