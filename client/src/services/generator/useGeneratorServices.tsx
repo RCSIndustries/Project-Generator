@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = 'http://code-catalyst.com:4000';
 
 export const useGeneratorServices = async (setData) => {
   await axios(`${BASE_URL}/api/generate/`, {
@@ -9,7 +9,7 @@ export const useGeneratorServices = async (setData) => {
     headers: {
        'Content-Type': 'application/json',
        'Access-Control-Allow-Origin': '*', // Allow requests from any origin
-    },
+        },
  }).then(response => {
     // You can access the response data here
     const responseData = response.data[0];
