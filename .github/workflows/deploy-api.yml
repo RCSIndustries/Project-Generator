@@ -15,7 +15,7 @@ jobs:
     - name: docker login
       env:
         DOCKER_USER: ${{ secrets.DOCKERHUB_USER }}   
-        DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}  
+        DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}  
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Docker Build Backend
