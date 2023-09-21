@@ -14,12 +14,14 @@ jobs:
     - 
       name: Checkout Actions
       uses: actions/checkout@v4
-    -
-      name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USER }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+   # -
+      #name: Login to Docker Hub
+      #uses: docker/login-action@v3
+      #with:
+        #username: ${{ secrets.DOCKERHUB_USER }}
+        #password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Login to DockerHub Registry
+      run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
     - 
       name: Docker Build Backend
       run: |
