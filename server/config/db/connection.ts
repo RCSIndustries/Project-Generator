@@ -24,7 +24,7 @@ const db_config = {
     user: dbUser,
     password: dbPassword,
     database: dbTable,
-    connectionLimit: 100, //important idk why
+    connectionLimit: 100, //important idk why at all
     debug: false
 };
 
