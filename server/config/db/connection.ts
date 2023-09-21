@@ -12,7 +12,8 @@ const dbTable = process.env.DB;
 let dbUrl = process.env.DB_URL;
 
 if (process.env.NODE_ENV === 'test') {
-    //SET TEST DB
+    //SET TEST DB URL INSTEAD SET CREDENTIALSX HERE
+
     dbUrl = process.env.TEST_DB_URL; 
 }
 
