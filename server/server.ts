@@ -16,6 +16,8 @@ app.use(bodyParser.json());
 require("./config/routes/adminroutes")(app);
 require("./config/routes/routes.ts")(app);
 
+//Initial APP here
+
 const serverPort =4000;
 app.listen(serverPort, () => {
     console.log('API is Running on:  ',serverPort);
