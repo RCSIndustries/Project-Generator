@@ -20,7 +20,7 @@ jobs:
         #docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Docker Build Backend
       run: |
-        docker build -f server/Dockerfile -t john4064/project-gen:backend .
+        docker build -f server/Dockerfile -t john4064/project-gen:backend ./server
     - name: docker push
       run: |
         docker push john4064/project-gen:backend .
