@@ -2,6 +2,7 @@ import axios from 'axios';
 
 
 const BASE_URL = 'http://code-catalyst.com:4000';
+//Service for the generate button
 
 export const useGeneratorServices = async (setData) => {
   await axios(`${BASE_URL}/api/generate/`, {
