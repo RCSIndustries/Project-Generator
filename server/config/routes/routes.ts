@@ -18,6 +18,7 @@ module.exports = (app:any) =>{
 
 
     //Placeholder
+    //TODO: SETUP ERROR ALL HANDLING
     // router.get("*", rootcontroller.catchAll);
 
 
