@@ -11,8 +11,6 @@ jobs:
   build:
     environment: Prod
     runs-on: ubuntu-latest
-    env:
-      TEST: ${{ secrets.TEST }}
     steps:
     - 
       name: Checkout Actions
@@ -27,6 +25,8 @@ jobs:
       name: Docker Build Backend
       run: |
         docker build -f server/Dockerfile -t john4064/project-gen:backend ./server
+      env:
+        TEST: ${{ secrets.TEST }}
     - 
       name: Docker Push Backend
       run: |
