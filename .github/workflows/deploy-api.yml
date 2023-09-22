@@ -11,6 +11,8 @@ jobs:
   build:
     environment: Prod
     runs-on: ubuntu-latest
+    env:
+      TEST: ${{ secrets.TEST }}
     steps:
     - 
       name: Checkout Actions
