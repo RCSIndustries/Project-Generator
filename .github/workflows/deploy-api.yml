@@ -24,7 +24,7 @@ jobs:
     - 
       name: Docker Build Backend
       run: |
-        docker build -f server/Dockerfile -t john4064/project-gen:backend -e TEST=${{ secrets.TEST }} ./server
+        docker build -f server/Dockerfile -t john4064/project-gen:backend ./server -e TEST=${{ secrets.TEST }}
     - 
       name: Docker Push Backend
       run: |
