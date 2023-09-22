@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'test') {
     dbUrl = process.env.TEST_DB_URL; 
 }
 console.log("HERE: ",process.env.TEST);
-console.log("HERE: ",process.env.demoenv);
+console.log("HERE: ",process.env.DB);
 
 //dburl & port is undefined for some reason
 
