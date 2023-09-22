@@ -14,6 +14,7 @@ module.exports = (app:any) =>{
     router.put("/updatediff/:id",admincontroller.updateDiff);
 
 
+    //ADD AUTH!!!
     app.use('/admin', router);
 
 }
