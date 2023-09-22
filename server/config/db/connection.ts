@@ -17,6 +17,7 @@ if (process.env.NODE_ENV === 'test') {
 }
 console.log("HERE: ",process.env.TEST);
 console.log("HERE: ",process.env.demoenv);
+
 //dburl & port is undefined for some reason
 
 const db_config = {
