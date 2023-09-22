@@ -15,7 +15,8 @@ if (process.env.NODE_ENV === 'test') {
     //SET TEST DB URL INSTEAD SET CREDENTIALS HERE
     dbUrl = process.env.TEST_DB_URL; 
 }
-console.log("HERE: ",process.env.TEST)
+console.log("HERE: ",process.env.TEST);
+console.log("HERE: ",process.env.demoenv);
 
 //dburl & port is undefined for some reason
 
