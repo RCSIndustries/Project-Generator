@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 //DOT ENV
 dotenv.config();
-
+ 
 const port = process.env.DB_PORT;
 const dbHost = process.env.DB_HOST;
 const dbUser= process.env.DB_USER;
@@ -15,7 +15,6 @@ if (process.env.NODE_ENV === 'test') {
     //SET TEST DB URL INSTEAD SET CREDENTIALS HERE
     dbUrl = process.env.TEST_DB_URL; 
 }
-console.log("HERE: ",process.env.TEST);
 console.log("HERE: ",process.env.DB);
 
 //dburl & port is undefined for some reason
