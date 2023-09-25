@@ -24,7 +24,7 @@ jobs:
     - 
       name: Docker Build Backend
       run: |
-        docker build -f server/Dockerfile -t john4064/project-gen:backend ./server --build-arg TEST=${{ secrets.TEST }}
+        docker build --platform linux/arm64 -f server/Dockerfile -t john4064/project-gen:backend ./server --build-arg TEST=${{ secrets.TEST }}
     - 
       name: Docker Push Backend
       run: |
