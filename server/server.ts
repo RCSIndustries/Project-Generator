@@ -20,5 +20,5 @@ require("./config/routes/routes.ts")(app);
 
 const serverPort =4000;
 app.listen(serverPort, () => {
-    console.log('API is Running on:  ',serverPort);
+    console.log('API is Running on port:  ',serverPort);
 });
