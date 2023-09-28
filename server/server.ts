@@ -12,7 +12,7 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json());
-
+//
 require("./config/routes/adminroutes")(app);
 require("./config/routes/routes.ts")(app);
 
