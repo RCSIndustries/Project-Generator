@@ -1,8 +1,8 @@
 //This controller will be responsible for admin endpoints such as adding ideas, editing ideas, removing ideas, accessing log data
-const adminService = require("../services/admin.service");
-exports.delete = async(req:any, res:any) => {
+const adminService = require("../services/admin.service"); 
+exports.delete = async(req:any, res:any) => { 
     adminService.removeById(req.params.id, (err:any, data:any):any => {
-        if (err) {
+        if (err) { 
             res.status(404).send({
                 message: `ERROR ATM`
             });
