@@ -22,7 +22,7 @@ jobs:
     - 
       name: Docker Build Frontend
       run: |
-        docker build -f client/Dockerfile -t john4064/project-gen:frontend ./client
+        docker build -f client/Dockerfile.prod -t john4064/project-gen:frontend ./client
     - 
       name: Docker Push Frontend
       run: |
