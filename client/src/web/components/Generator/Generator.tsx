@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 import GenerateButtonComponent from "../../common/GenerateBtn/Generatebtn";
 import { levelColors } from "../maps/maps";
 
+import { MenuItem,FormControl,InputLabel,Select } from "@mui/material";
 const Wrapper = styled.main({
 	display: 'flex',
 	flexDirection: 'column',
@@ -52,6 +53,8 @@ export const Generator = ({ data, setData }) => {
 
   const [levelColor, setLevelColor] = useState('#007bff')
 
+  const [lang, setLang] = useState("")
+
   const updateData = () => {
     useGeneratorServices(setData);
   };
@@ -77,6 +80,22 @@ export const Generator = ({ data, setData }) => {
             <StyledText>{data.project_lang}</StyledText>
             <StyledText>{data.project_diff}</StyledText>
           </DataBox>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={lang}
+              label="Age"
+              // onChange={setLang}
+            >
+              <MenuItem value={"java"}>Java</MenuItem>
+              <MenuItem value={"c++"}>C++</MenuItem>
+              <MenuItem value={"python"}>Python</MenuItem>
+              <MenuItem value={"go"}>Go</MenuItem>
+              <MenuItem value={"c#"}>C#</MenuItem>
+            </Select>
+        </FormControl>
           <GenerateButtonComponent onClick={updateData} />
         </GenBox>
       </Wrapper>
