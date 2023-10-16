@@ -29,7 +29,7 @@ projectService.findById=(id :number,res:any)=>{
 }
 
 projectService.findByName=(name :string,res:any)=>{
-    let query = 'SELECT * FROM projects where project_name='+name;
+    let query = 'SELECT * FROM projects where LOWER(project_name) LIKE "%'+name.toLowerCase()+'%"';
     db.query(query,(err:any,sqlResult:any)=>{
         if(err){
             console.error("Error with SQL Request");
