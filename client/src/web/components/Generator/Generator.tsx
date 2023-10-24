@@ -48,6 +48,11 @@ const StyledHeader = styled.h2({
 const StyledText = styled.p({
   textAlign: 'center',
 })
+const ButtonBox = styled.div({
+  position: 'absolute',
+  bottom: '5%',
+  left: '5%'
+})
 
 export const Generator = ({ data, setData }) => {
 
@@ -80,13 +85,15 @@ export const Generator = ({ data, setData }) => {
             <StyledText>{data.project_lang}</StyledText>
             <StyledText>{data.project_diff}</StyledText>
           </DataBox>
-          <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <ButtonBox>
+          <FormControl sx={{ m: 1, minWidth: 120 }} size="small" variant="standard" >
+            <InputLabel id="lang-type-select-label">Age</InputLabel>
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
+              labelId="lang-select-label"
+              id="lang-select"
               value={lang}
-              label="Age"
+              label="Language"
+              
               // onChange={setLang}
             >
               <MenuItem value={"java"}>Java</MenuItem>
@@ -96,7 +103,11 @@ export const Generator = ({ data, setData }) => {
               <MenuItem value={"c#"}>C#</MenuItem>
             </Select>
         </FormControl>
-          <GenerateButtonComponent onClick={updateData} />
+        </ButtonBox>
+        <GenerateButtonComponent onClick={updateData} />
+          
+          
+          
         </GenBox>
       </Wrapper>
     </React.Fragment>
