@@ -3,9 +3,7 @@ FROM node:16-alpine
 WORKDIR /app
 COPY /package*.json ./
 COPY /package-lock.json ./
-RUN npm ci
-COPY . ./
-RUN npm run build
+#BUILD IT BEFORE RUNNING THE COMPOSE
 COPY /build ./build
 
 EXPOSE 80
