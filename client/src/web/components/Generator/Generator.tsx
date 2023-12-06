@@ -61,6 +61,7 @@ export const Generator = ({ data, setData }) => {
   const [lang, setLang] = useState("")
 
   const updateData = () => {
+    console.log(lang);
     useGeneratorServices(setData);
   };
 
@@ -87,14 +88,16 @@ export const Generator = ({ data, setData }) => {
           </DataBox>
           <ButtonBox>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small" variant="standard" >
-            <InputLabel id="lang-type-select-label">Age</InputLabel>
+            <InputLabel id="lang-type-select-label">Language</InputLabel>
             <Select
               labelId="lang-select-label"
               id="lang-select"
+              defaultValue={""}
               value={lang}
               label="Language"
-              
-              // onChange={setLang}
+              onChange={(value) =>
+                value.target.value !== null ? setLang(value.target.value) : setLang("")
+              }
             >
               <MenuItem value={"java"}>Java</MenuItem>
               <MenuItem value={"c++"}>C++</MenuItem>
@@ -105,9 +108,6 @@ export const Generator = ({ data, setData }) => {
         </FormControl>
         </ButtonBox>
         <GenerateButtonComponent onClick={updateData} />
-          
-          
-          
         </GenBox>
       </Wrapper>
     </React.Fragment>
