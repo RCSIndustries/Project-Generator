@@ -61,8 +61,7 @@ export const Generator = ({ data, setData }) => {
   const [lang, setLang] = useState("")
 
   const updateData = () => {
-    console.log(lang);
-    useGeneratorServices(setData);
+    useGeneratorServices(setData,lang);
   };
 
   useEffect(() => {
