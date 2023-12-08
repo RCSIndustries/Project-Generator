@@ -97,6 +97,7 @@ export const Generator = ({ data, setData }) => {
               onChange={(value) =>
                 value.target.value !== null ? setLang(value.target.value) : setLang("")
               }
+
             >
               <MenuItem value={"java"}>Java</MenuItem>
               <MenuItem value={"c++"}>C++</MenuItem>
@@ -107,6 +108,7 @@ export const Generator = ({ data, setData }) => {
         </FormControl>
         </ButtonBox>
         <GenerateButtonComponent onClick={updateData} />
+
         </GenBox>
       </Wrapper>
     </React.Fragment>
