@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 import GenerateButtonComponent from "../../common/GenerateBtn/Generatebtn";
 import { levelColors } from "../maps/maps";
 
+import { MenuItem,FormControl,InputLabel,Select } from "@mui/material";
 const Wrapper = styled.main({
 	display: 'flex',
 	flexDirection: 'column',
@@ -47,13 +48,20 @@ const StyledHeader = styled.h2({
 const StyledText = styled.p({
   textAlign: 'center',
 })
+const ButtonBox = styled.div({
+  position: 'absolute',
+  bottom: '5%',
+  left: '5%'
+})
 
 export const Generator = ({ data, setData }) => {
 
   const [levelColor, setLevelColor] = useState('#007bff')
 
+  const [lang, setLang] = useState("")
+
   const updateData = () => {
-    useGeneratorServices(setData);
+    useGeneratorServices(setData,lang);
   };
 
   useEffect(() => {
@@ -77,7 +85,30 @@ export const Generator = ({ data, setData }) => {
             <StyledText>{data.project_lang}</StyledText>
             <StyledText>{data.project_diff}</StyledText>
           </DataBox>
-          <GenerateButtonComponent onClick={updateData} />
+          <ButtonBox>
+          <FormControl sx={{ m: 1, minWidth: 120 }} size="small" variant="standard" >
+            <InputLabel id="lang-type-select-label">Language</InputLabel>
+            <Select
+              labelId="lang-select-label"
+              id="lang-select"
+              defaultValue={""}
+              value={lang}
+              label="Language"
+              onChange={(value) =>
+                value.target.value !== null ? setLang(value.target.value) : setLang("")
+              }
+
+            >
+              <MenuItem value={"java"}>Java</MenuItem>
+              <MenuItem value={"c++"}>C++</MenuItem>
+              <MenuItem value={"python"}>Python</MenuItem>
+              <MenuItem value={"go"}>Go</MenuItem>
+              <MenuItem value={"c#"}>C#</MenuItem>
+            </Select>
+        </FormControl>
+        </ButtonBox>
+        <GenerateButtonComponent onClick={updateData} />
+
         </GenBox>
       </Wrapper>
     </React.Fragment>
