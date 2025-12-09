@@ -30,7 +30,7 @@
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
-    "serve": "^14.2.1",
+    "serve": "^14.2.5",
     "styled-components": "^6.0.7",
     "styled-system": "^5.1.5",
     "vercel": "^49.1.2",
