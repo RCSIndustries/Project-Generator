@@ -77,9 +77,6 @@ async fn generate_idea() ->Result<impl IntoResponse, ApiError>{
 //192.168.0.140:5432 rcsdev
 #[tokio::main]
 async fn main() {
-    // build our application with a single route
-    let _db_connection_str = std::env::var("DATABASE_URL")
-        .unwrap_or_else(|_| "postgres://X".to_string());
 
     let manager =
         PostgresConnectionManager::new_from_stringlike("host=X user=X", NoTls)
