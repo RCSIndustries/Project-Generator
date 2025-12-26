@@ -6,9 +6,10 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "install": "concurrently \"npm run server-install\" \"npm run client-install\"",
-    "server": "cd server && bash build.sh",
+    "server": "cd server && bash run.sh",
     "client": "cd client && npm start",
-    "client-install": "cd client && npm i"
+    "client-install": "cd client && npm i",
+    "server-install": "cd server && cargo build"
   },
   "keywords": [],
   "author": "",
