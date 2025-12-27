@@ -73,7 +73,6 @@ export const Generator = ({ data, setData }) => {
 		if (reason === 'clickaway') {
 			return;
 		}
-
 		setOpen(false);
 	};
 
@@ -136,7 +135,7 @@ export const Generator = ({ data, setData }) => {
 				</GenBox>
 			</Wrapper>
 			<Snackbar
-				sx={{}}
+				sx={{paddingTop: '7vh'}}
 				open={open}
 				autoHideDuration={3000}
 				onClose={handleClose}
