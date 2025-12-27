@@ -19,8 +19,8 @@ const Wrapper = styled.main({
 const GenBox = styled.div({
 	minWidth: '60%',
 	maxWidth: '60%',
-	minHeight: '50%',
-	maxHeight: '50%',
+	minHeight: '60vh',
+	maxHeight: '90vh',
 	backgroundColor: '#27213c', /* Background color for the page */
 	borderRadius: '10px', /* Adjust the value to control the amount of rounding */
 	display: 'flex',
@@ -60,9 +60,10 @@ export const Generator = ({ data, setData }) => {
 	const [levelColor, setLevelColor] = useState('#007bff')
 	const [lang, setLang] = useState("")
 
+	const languages = ["Java", "C++", "Python", "Go", "C#", "Rust"]
+
 	const updateData = () => {
-		setOpen(true);
-		useGeneratorServices(setData, lang);
+		useGeneratorServices(setData, lang, setOpen);
 	};
 
 
@@ -120,13 +121,10 @@ export const Generator = ({ data, setData }) => {
 								onChange={(value) =>
 									value.target.value !== null ? setLang(value.target.value) : setLang("")
 								}
-
 							>
-								<MenuItem value={"java"}>Java</MenuItem>
-								<MenuItem value={"c++"}>C++</MenuItem>
-								<MenuItem value={"python"}>Python</MenuItem>
-								<MenuItem value={"go"}>Go</MenuItem>
-								<MenuItem value={"c#"}>C#</MenuItem>
+								{languages.map((language) => (
+									<MenuItem value={language}>{language}</MenuItem>
+								))}
 							</Select>
 						</FormControl>
 					</ButtonBox>
@@ -135,7 +133,7 @@ export const Generator = ({ data, setData }) => {
 				</GenBox>
 			</Wrapper>
 			<Snackbar
-				sx={{paddingTop: '7vh'}}
+				sx={{ paddingTop: '7vh' }}
 				open={open}
 				autoHideDuration={3000}
 				onClose={handleClose}
