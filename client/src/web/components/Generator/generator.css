@@ -1,0 +1,13 @@
+@media screen and (max-width: 720px) {
+    .lang-tab {
+        display: none !important;
+    }
+}
+
+.lang-tab {
+    min-width: 10vh;
+    top: 0%;
+    bottom: 20;
+    left: 40%;
+    position: 'relative';
+}

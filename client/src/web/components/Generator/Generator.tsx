@@ -7,9 +7,7 @@ import { levelColors } from "../maps/maps";
 import { SnackbarCloseReason } from '@mui/material/Snackbar';
 import { MenuItem, FormControl, InputLabel, Select, Snackbar, Button, IconButton, Alert } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-
-import NavigationIcon from '@mui/icons-material/Navigation';
-
+import './generator.css';
 
 
 import Fab from '@mui/material/Fab';
@@ -110,22 +108,12 @@ export const Generator = ({ data, setData }) => {
 		<React.Fragment>
 			<Wrapper>
 				<GenBox style={{ border: `2px solid ${levelColor}` }}>
-					<Fab style={{
-						margin: 0,
-						top: 'auto',
-						right: 20,
-						bottom: 20,
-						left: 'auto',
-						position: 'fixed',
-					}} variant="extended" size="medium" color="primary">
-						<NavigationIcon sx={{ mr: 1 }} />
-						Extended
+					<Fab className="lang-tab" variant="extended" size="medium" color="primary">
+						{data.project_lang}
 					</Fab>
 					<DataBox>
 						<StyledHeader>{data.project_name}</StyledHeader>
-
 						<StyledText>{data.project_desc}</StyledText>
-						<StyledText>{data.project_lang}</StyledText>
 						<StyledText>{data.project_diff}</StyledText>
 					</DataBox>
 					<ButtonBox>
