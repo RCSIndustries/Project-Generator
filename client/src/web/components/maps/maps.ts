@@ -2,7 +2,10 @@ export const initProps = {
   "project_name":"",
   "project_desc":"",
   "project_diff":"",
-  "project_lang":""
+  "project_lang":"",
+  "app":{
+    
+  }
 };
 
 export const levelColors = {
