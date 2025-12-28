@@ -7,6 +7,12 @@ import { levelColors } from "../maps/maps";
 import { SnackbarCloseReason } from '@mui/material/Snackbar';
 import { MenuItem, FormControl, InputLabel, Select, Snackbar, Button, IconButton, Alert } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
+
+import NavigationIcon from '@mui/icons-material/Navigation';
+
+
+
+import Fab from '@mui/material/Fab';
 const Wrapper = styled.main({
 	display: 'flex',
 	flexDirection: 'column',
@@ -55,12 +61,13 @@ const ButtonBox = styled.div({
 	left: '5%'
 })
 
+
 export const Generator = ({ data, setData }) => {
 	const [open, setOpen] = React.useState(false);
 	const [levelColor, setLevelColor] = useState('#007bff')
 	const [lang, setLang] = useState("")
 
-	const languages = ["Java", "C++", "Python", "Go", "C#", "Rust"]
+	const languages = ["Java", "C++", "Python", "Go", "Javascript", "Rust"]
 
 	const updateData = () => {
 		useGeneratorServices(setData, lang, setOpen);
@@ -103,15 +110,27 @@ export const Generator = ({ data, setData }) => {
 		<React.Fragment>
 			<Wrapper>
 				<GenBox style={{ border: `2px solid ${levelColor}` }}>
+					<Fab style={{
+						margin: 0,
+						top: 'auto',
+						right: 20,
+						bottom: 20,
+						left: 'auto',
+						position: 'fixed',
+					}} variant="extended" size="medium" color="primary">
+						<NavigationIcon sx={{ mr: 1 }} />
+						Extended
+					</Fab>
 					<DataBox>
 						<StyledHeader>{data.project_name}</StyledHeader>
+
 						<StyledText>{data.project_desc}</StyledText>
 						<StyledText>{data.project_lang}</StyledText>
 						<StyledText>{data.project_diff}</StyledText>
 					</DataBox>
 					<ButtonBox>
 						<FormControl sx={{ m: 1, minWidth: 120 }} size="small" variant="standard" >
-							<InputLabel id="lang-type-select-label">Language</InputLabel>
+							<InputLabel id="lang-select-label">Language</InputLabel>
 							<Select
 								labelId="lang-select-label"
 								id="lang-select"
