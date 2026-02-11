@@ -20,7 +20,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.6",
     "@mui/material": "^5.14.6",
-    "axios": "^1.12.0",
+    "axios": "^1.13.5",
     "express": "^4.22.1",
     "next": "^14.2.32",
     "nth-check": "^2.0.1",
