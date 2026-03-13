@@ -33,7 +33,7 @@
     "serve": "^14.2.5",
     "styled-components": "^6.0.7",
     "styled-system": "^5.1.5",
-    "vercel": "^49.1.2",
+    "vercel": "^50.32.5",
     "web-vitals": "^3.4.0"
   },
   "bundleDependencies": [
